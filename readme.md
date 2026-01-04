@@ -27,3 +27,44 @@ The optional 5-channel heating and drying function includes dedicated interfaces
 - 2x Neopixel RGB interfaces for indication or lighting
 - Onboard BOOT0 and RST buttons
 - Independent input interface board
+
+
+# FIrmware Guide
+
+### Firmware configuration and compilation
+
+#### Using no bootloader
+
+##### CANBUS communication mode
+![](/image/X5_CAN.png)
+
+
+##### USB communication mode
+![](/image/X5_USB.png)
+
+
+## Firmware upload
+
+### DFU Mode
+
+firmware flashing can only be performed after entering DFU mode.
+How to get in DFU mode:
+1. hold BT0 button for 2 seconds
+2. Hold RST button for 2 seconds
+3. Release the RST button
+4. wait 2seconds
+5. Release the BT0 button
+"lsusb" check if get in DFU mode
+
+
+### Upload Bootloader
+
+Command：
+
+```shell
+cd ~/klipper
+make flash FLASH_DEVICE=0483:df11
+```
+
+# Attachments
+- [Happy-Hare](https://github.com/moggieuk/Happy-Hare/wiki)
